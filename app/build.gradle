@@ -1,0 +1,92 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.ferbajoo.testthingskotlin"
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    sourceSets {
+        main {
+            java {
+                srcDir "${buildDir.absolutePath}/generated/source/kaptKotlin/"
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation SupportLibraries.design
+    implementation SupportLibraries.cardview
+    implementation SupportLibraries.recyclerview
+    implementation SupportLibraries.constraintlayout
+    implementation SupportLibraries.appcompat
+
+    implementation SupportLibraries.SupportDesign
+
+    implementation BindingDependencies.rxBinding
+    implementation BindingDependencies.rxBindingDesing
+    implementation BindingDependencies.rxBindingKotlin
+
+    annotationProcessor Libraries.glideCompiler
+
+    implementation LottieLibrary.lottie
+
+    implementation Libraries.billing
+    implementation Libraries.ktx
+
+    implementation NavigationLibraries.navigationFragmentLibrary
+    implementation NavigationLibraries.navigationUILibrary
+
+    testImplementation TestLibraries.junit
+    testImplementation TestLibraries.assertjCore
+    testImplementation TestLibraries.mockitoKotlin
+    testImplementation TestLibraries.mockitoInline
+    testImplementation TestLibraries.lifecycleTesting
+
+
+    testImplementation TestLibraries.junit
+    androidTestImplementation TestLibraries.runner
+    androidTestImplementation TestLibraries.espresso
+
+    implementation Libraries.kotlin
+    implementation Libraries.ktx
+    implementation Libraries.koinAndroid
+    implementation Libraries.koinViewModel
+
+
+    implementation project(path: ':annotation_test')
+    kapt project(':codegen')
+
+    implementation project(path: ':annotation')
+    kapt project(path: ':processor')
+    annotationProcessor project(path: ':processor')
+
+    implementation project(path: ':common:presentation')
+    implementation project(path: ':common:network')
+
+}

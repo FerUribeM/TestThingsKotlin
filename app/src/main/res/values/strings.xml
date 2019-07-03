@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TestThingsKotlin</string>
+    <string name="WRITE_ON_HTML">file:///android_asset/www/write_on.html</string>
+</resources>

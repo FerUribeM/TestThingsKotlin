@@ -1,0 +1,23 @@
+apply from: "$rootDir/common-android-library.gradle"
+apply plugin: 'kotlin-kapt'
+
+android {
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+
+    kapt Libraries.lifecycleCompiler
+    implementation TestLibraries.lifecycleTesting
+    implementation SupportLibraries.recyclerview
+
+
+    implementation BindingDependencies.rxBinding
+    implementation BindingDependencies.rxBindingDesing
+    implementation BindingDependencies.rxBindingKotlin
+
+    api Libraries.glide
+    kapt Libraries.glideCompiler
+}

@@ -1,0 +1,2 @@
+include ':annotation_test', ':codegen'
+include Modules.app, Modules.processor, Modules.annotation, Modules.network, Modules.presentation
