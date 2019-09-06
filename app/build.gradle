@@ -43,14 +43,17 @@ dependencies {
     implementation SupportLibraries.design
     implementation SupportLibraries.cardview
     implementation SupportLibraries.recyclerview
-    implementation SupportLibraries.constraintlayout
-    implementation SupportLibraries.appcompat
 
     implementation SupportLibraries.SupportDesign
 
     implementation BindingDependencies.rxBinding
     implementation BindingDependencies.rxBindingDesing
     implementation BindingDependencies.rxBindingKotlin
+
+    implementation SupportLibraries.appcompat
+    implementation SupportLibraries.constraintlayout
+
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
     annotationProcessor Libraries.glideCompiler
 
@@ -81,10 +84,6 @@ dependencies {
 
     implementation project(path: ':annotation_test')
     kapt project(':codegen')
-
-    implementation project(path: ':annotation')
-    kapt project(path: ':processor')
-    annotationProcessor project(path: ':processor')
 
     implementation project(path: ':common:presentation')
     implementation project(path: ':common:network')

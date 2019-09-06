@@ -7,15 +7,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.ferbajoo.annotation_test.Foo
 import com.ferbajoo.testthingskotlin.R
+import com.ferbajoo.testthingskotlin.core.base.BaseActivityWithBack
 import com.ferbajoo.testthingskotlin.core.extensions.getToolbar
 import kotlinx.android.synthetic.main.activity_jstest_layout.*
 
 @Foo(
     name = "JSTestActivity",
     value = "Prueba para funciones javaScript en Android",
-    drawable = R.drawable.ic_launcher_background
+    drawable = R.drawable.javascript
 )
-class JSTestActivity : AppCompatActivity() {
+class JSTestActivity : BaseActivityWithBack() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,12 +35,4 @@ class JSTestActivity : AppCompatActivity() {
             wb_javascript.loadUrl(getString(R.string.WRITE_ON_HTML))
         }
     }
-
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
-            android.R.id.home -> finish()
-        }
-        return true
-    }
-
 }

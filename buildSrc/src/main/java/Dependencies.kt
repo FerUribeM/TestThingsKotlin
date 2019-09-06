@@ -5,8 +5,8 @@ object ApplicationId {
 object Modules {
     val app = ":app"
     val navigation = ":navigation"
-    val processor = ":processor"
-    val annotation = ":annotation"
+    val processor = ":codegen"
+    val annotation = ":annotation_test"
 
     val cache = ":common:cache"
     val network = ":common:network"
@@ -40,7 +40,7 @@ object Versions {
 
     val fabric = "1.27.0"
 
-    val appcompat = "1.1.0-alpha04"
+    val appcompat = "1.0.2"
     val design = "1.0.0-alpha1"
     val cardview = "1.0.0"
     val recyclerview = "1.0.0"
